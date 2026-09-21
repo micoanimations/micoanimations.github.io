@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Authorization Complete</title>
+<style>
+body { font-family: -apple-system, sans-serif; max-width: 600px; margin: 80px auto; padding: 20px; text-align: center; }
+h1 { color: #333; }
+.code-box { background: #f5f5f5; padding: 20px; border-radius: 8px; word-break: break-all; font-family: monospace; font-size: 14px; margin: 20px 0; }
+</style>
+</head>
+<body>
+<h1>Authorization Complete</h1>
+<p>Your authorization code is below. Copy it and send it to your assistant:</p>
+<div class="code-box" id="code">Loading...</div>
+<script>
+const params = new URLSearchParams(window.location.search);
+const code = params.get('code') || params.get('authorization_code') || 'No code found in URL';
+document.getElementById('code').textContent = code;
+</script>
+</body>
+</html>
